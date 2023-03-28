@@ -49,6 +49,7 @@ public class LendsListPanel extends JPanel implements ActionListener {
         refreshButton.setFont(new Font("Calibri", Font.PLAIN, 17));
         refreshButton.setFocusable(false);
         refreshButton.addActionListener(this);
+        refreshButton.addActionListener(owner);
 
         lends = lendService.findAll();
         lendsJList = fillJList(lends);
@@ -56,6 +57,7 @@ public class LendsListPanel extends JPanel implements ActionListener {
         lendsJList.setBackground(new Color(0xFCF8B0));
         lendsJList.setFont(new Font("Calibri", Font.PLAIN, 20));
         lendsJList.setFixedCellHeight(60);
+        lendsJList.addListSelectionListener(owner);
 
         scrollPane = new JScrollPane(lendsJList);
         scrollPane.setBounds(30, 80, 264, 550);
@@ -160,7 +162,7 @@ public class LendsListPanel extends JPanel implements ActionListener {
         scrollPane.setBounds(30, 80, 264, 500);
     }
 
-    public void refreshList(ListSelectionListener l) {
+    public void refreshList() {
         this.remove(lendsJList);
         lends = lendService.findAll();
         lendsJList = fillJList(lends);
@@ -168,7 +170,7 @@ public class LendsListPanel extends JPanel implements ActionListener {
         lendsJList.setBackground(new Color(0xFCF8B0));
         lendsJList.setFont(new Font("Calibri", Font.PLAIN, 20));
         lendsJList.setFixedCellHeight(60);
-        lendsJList.addListSelectionListener(l);
+        lendsJList.addListSelectionListener(owner);
 //        scrollPane = new JScrollPane(lendsJList);
         scrollPane.setViewportView(lendsJList);
 //        this.add(scrollPane);

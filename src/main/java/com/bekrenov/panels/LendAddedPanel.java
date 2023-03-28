@@ -8,11 +8,8 @@ import java.awt.*;
 public class LendAddedPanel extends AbstractBookLenderPanel {
 
     private JButton newLendButton;
-    private BookLenderFrame owner;
 
     public LendAddedPanel(BookLenderFrame owner) {
-        super(owner);
-        this.owner = owner;
 
         JLabel lendAddedLabel = new JLabel("A book was successfully added");
         lendAddedLabel.setBounds(60, 200, 700, 300);
@@ -27,6 +24,7 @@ public class LendAddedPanel extends AbstractBookLenderPanel {
         newLendButton.setBounds(230, 550, 250, 150);
         newLendButton.setFont(new Font("Calibri", Font.PLAIN, 27));
         newLendButton.setFocusable(false);
+        newLendButton.addActionListener(owner);
 
         this.setVisible(false);
         this.setBackground(new Color(0xFCF8B0));

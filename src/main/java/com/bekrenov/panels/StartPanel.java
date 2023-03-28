@@ -12,13 +12,11 @@ public class StartPanel extends JPanel{
 
 
     private JButton newLendButton;
-    private BookLenderFrame root;
 
-    public StartPanel(BookLenderFrame root){
-        this.root = root;
+    public StartPanel(BookLenderFrame owner){
 
-        JLabel startLabel = new JLabel("Welcome to Book Lender!");
-        startLabel.setBounds(50, 200, 700, 100);
+        JLabel startLabel = new JLabel("<html><center>Welcome to<br> Book Lending Manager!");
+        startLabel.setBounds(80, 130, 700, 150);
         startLabel.setHorizontalTextPosition(JLabel.CENTER);
         startLabel.setVerticalTextPosition(JLabel.CENTER);
         startLabel.setFont(new Font("Calibri", Font.PLAIN, 55));
@@ -33,6 +31,7 @@ public class StartPanel extends JPanel{
         newLendButton.setVerticalTextPosition(JLabel.BOTTOM);
         newLendButton.setIconTextGap(30);
         newLendButton.setFocusable(false);
+        newLendButton.addActionListener(owner);
 
         setBackground(new Color(0xFCF8B0));
         setBounds(300, 0, 700, 820);

@@ -24,20 +24,15 @@ public class BookLenderFrame extends JFrame implements ActionListener, ListSelec
 
     public BookLenderFrame() {
         startPanel = new StartPanel(this);
-        startPanel.getNewLendButton().addActionListener(this);
         newLendPanel = new AddNewLendPanel(this);
-        newLendPanel.getConfirmButton().addActionListener(this);
         lendAddedPanel = new LendAddedPanel(this);
-        lendAddedPanel.getNewLendButton().addActionListener(this);
         lendsListPanel = new LendsListPanel(this);
-        lendsListPanel.getLendsJList().addListSelectionListener(this);
-        lendsListPanel.getRefreshButton().addActionListener(this);
 
         ImageIcon logoIcon = new ImageIcon("src/main/resources/icons/logo.png");
         setIconImage(logoIcon.getImage());
         setSize(new Dimension(1000, 820));
         setLocation(280, 0);
-        setTitle("Book Lender");
+        setTitle("Book Lending Manager");
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -87,16 +82,12 @@ public class BookLenderFrame extends JFrame implements ActionListener, ListSelec
         }
 
         if(e.getSource() == lendsListPanel.getRefreshButton()){
-
-            lendsListPanel.refreshList(this);
-            lendsListPanel.getLendsJList().addListSelectionListener(this);
+            lendsListPanel.refreshList();
         }
 
         if(e.getSource() == lendPanel.getSaveButton()){
             //TODO: refresh will not work without delay
-
-            lendsListPanel.refreshList(this);
-            lendsListPanel.getLendsJList().addListSelectionListener(this);
+            lendsListPanel.refreshList();
         }
     }
 

@@ -308,6 +308,7 @@ public class AddNewLendPanel extends AbstractBookLenderPanel implements ActionLi
         confirmButton.setBounds(230, 690, 200, 50);
         confirmButton.setFocusable(false);
         confirmButton.addActionListener(this);
+        confirmButton.addActionListener(owner);
 
         //this.setBackground(new Color(0xABBCD9));
         this.setBackground(new Color(0xFCF8B0));
