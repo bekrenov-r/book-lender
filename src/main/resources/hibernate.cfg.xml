@@ -11,8 +11,8 @@
         <!-- Database Connection Settings -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/booklender</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">i?u.M7afDGo)hZ=2Ny]V</property>
+        <property name="hibernate.connection.username">your_username</property>
+        <property name="hibernate.connection.password">your_password</property>
         <property name="show_sql">true</property>
 
         <!-- Specifying Session Context -->
